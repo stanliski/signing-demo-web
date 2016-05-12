@@ -1,0 +1,87 @@
+{% extends "base.html"%}
+{% block head %}
+<head>
+<meta charset="utf-8">
+<title>Beacon配置管理系统</title>
+<meta name="description" content="Beacon配置管理系统">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/action.js"></script>
+</head>
+{% endblock %}
+<body>
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+{% block chart %}
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-top:50px">
+    <form class="form-horizontal" role="form">
+       <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">major</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="major">
+          </div>
+       </div>
+        <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">minor</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="minor">
+          </div>
+       </div>
+        <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">UUID</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="UUID">
+          </div>
+       </div>
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">选择部署区域</label>
+            <div class="col-sm-6">
+                <select class="form-control" >
+                    <option>区域1</option>
+                    <option>区域2</option>
+                    <option>区域3</option>
+                    <option>区域4</option>
+                    <option>区域5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">Level</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="Level">
+          </div>
+       </div>
+        <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">Frequency</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="Frequency">
+          </div>
+       </div>
+       <div class="form-group">
+          <label for="firstname" class="col-sm-2 control-label">部署坐标</label>
+          <div class="col-sm-3">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="X轴坐标">
+          </div>
+           <div class="col-sm-3">
+             <input type="text" class="form-control" id="firstname"
+                placeholder="Y轴坐标">
+          </div>
+       </div>
+       <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+             <button type="submit" class="btn btn-default">添加</button>
+          </div>
+       </div>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

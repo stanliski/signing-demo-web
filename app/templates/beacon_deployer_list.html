@@ -1,0 +1,57 @@
+{% extends "base.html"%}
+{% block head %}
+<head>
+<meta charset="utf-8">
+<title>Beacon配置管理系统</title>
+<meta name="description" content="定位数据分析系统">
+<link href="/static/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/style.css" rel="stylesheet">
+    <script src="/static/jquery-latest.min.js"></script>
+    <script src="/static/ap_device.js"></script>
+</head>
+{% endblock %}
+<body>
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+{% block chart %}
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-top:25px">
+<form class="form-inline" role="form" action="add_deployer" method="get">
+   <div class="checkbox" style="float:right" >
+       <button type="submit" class="btn btn-success">添加</button>
+   </div>
+</form>
+</div>
+<div class="container" style="margin-top:10px">
+    <table class="table table-bordered table-striped responsive-utilities" style="font-size:11px">
+          <thead>
+            <tr>
+                    <th>ID号</th>
+                    <th>姓名</th>
+                    <th>布点数</th>
+                    <th>注册时间</th>
+                    <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for deployer in deployer_list  %}
+                <tr>
+                    <td>{{ deployer.id }}</td>
+                    <td>{{ deployer.name }}</td>
+                    <td>10</td>
+                    <td>{{ deployer.register_time }}</td>
+                    <td><span id={{ deployer.id }}>删除</span></td>
+                </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+</div>
+
+{% endblock %}
+</body>
+{% block footer%}
+{{ super() }}
+{% endblock %}
+</html>

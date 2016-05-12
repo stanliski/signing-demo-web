@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <title>Beacon配置管理系统</title>
+    <meta name="description" content="定位数据分析系统">
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+    <script src="/static/jquery-latest.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/beacon.js"></script>
+</head>
+{% endblock %}
+<body>
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+{% block chart %}
+{% endblock %}
+{% block content %}
+    <div class="container" style="margin-top:25px">
+        <table class="table table-bordered table-striped responsive-utilities" style="font-size:11px">
+            <thead>
+                <tr>
+                    <th>Beacon型号</th>
+                    <th>功率</th>
+                    <th>发射间隔</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for setting in setting_list %}
+                <tr>
+                    <td class="is-hidden">{{ setting.beacon_version }}</td>
+                    <td class="is-hidden">{{ setting.level }}dbm</td>
+                    <td class="is-visible">{{ setting.frequency }}ms</td>
+                    <td class="is-visible">
+                        <button id="edit-beacon-btn" type="button" class="btn btn-success" name="{{ setting.id }}">
+                            编辑
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+</body>
+{% block footer%}
+{{ super() }}
+{% endblock %}
+</html>

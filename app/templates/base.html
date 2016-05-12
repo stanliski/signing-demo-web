@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title></title>{% endblock %}
+</head>
+{% endblock %}
+<body>
+{% block navbar %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand hidden-sm" href="#" onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'navbar-首页'])">Beacon配置管理系统</a>
+        </div>
+        <div class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="info">Beacon配置</a></li>
+            <li><a href="history">Beacon激活记录</a></li>
+            <li><a href="statistic" >统计</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right hidden-sm">
+            <li><a href="abort" onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'about'])">登出</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}
+<!--{% block sidebar %}-->
+<!--<div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar">-->
+          <!--<div class="list-group">-->
+            <!--<a href="#" class="list-group-item active">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+            <!--<a href="#" class="list-group-item">Link</a>-->
+          <!--</div>-->
+        <!--</div>-->
+<!--{% endblock %}-->
+{% block chart %}
+<div class="container">
+	<div class="row">
+		<div class="span3">
+            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+	</div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="span2" style="text-align:center">
+            <form class="form-inline" action="/highcharts" method="post">
+                <input name="x" type="text" class="input-small" placeholder="x坐标">
+                <input name="y" type="text" class="input-small" placeholder="y坐标">
+                <input name="areaID" type="text" class="input-small" placeholder="采样地点ID">
+                <button type="submit" class="btn">生成报表</button>
+                <a href="/remove">删除数据</a>
+            </form>
+        </div>
+	</div>
+</div>
+{% endblock %}
+</body>
+{% block footer%}
+<footer class="footer navbar-fixed-bottom ">
+    <div class="container" style="background-color:white; margin-bottom:20px">
+       <center>Copyright © 2015 爱咔咔信息技术有限公司</center>
+    </div>
+</footer>
+{% endblock %}
+</html>
